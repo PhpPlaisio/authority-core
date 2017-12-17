@@ -1,0 +1,34 @@
+{
+  "name": "setbased/abc-authority-core",
+  "description": "ABC-Framework: Core Authority",
+  "keywords": [
+    "ABC-Framework",
+    "Core",
+    "Authority"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0.0",
+    "setbased/abc": "^0.10.29",
+    "setbased/abc-authority": "^0.1.0"
+  },
+  "require-dev": {
+    "phing/phing": "^2.0.0",
+    "phpunit/phpunit": "^6.0.0",
+    "setbased/php-stratum": "^0.9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SetBased\\Abc\\Authority\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SetBased\\Abc\\Authority\\Test\\": "test/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
