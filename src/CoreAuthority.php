@@ -38,7 +38,7 @@ class CoreAuthority implements Authority
   public function userGrantRole($usrId, $rolId)
   {
     Abc::$DL->abcUserRoleGrantRole(Abc::$companyResolver->getCmpId(), $usrId, $rolId, date('Y-m-d'), '9999-12-31');
-    Abc::$DL->abcProfileProper();
+    Abc::$DL->abcProfileProperUser(Abc::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ class CoreAuthority implements Authority
   public function userRevokeRole($usrId, $rolId)
   {
     Abc::$DL->abcUserRoleRevokeRole(Abc::$companyResolver->getCmpId(), $usrId, $rolId);
-    Abc::$DL->abcProfileProper();
+    Abc::$DL->abcProfileProperUser(Abc::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ class CoreAuthority implements Authority
     {
       Abc::$DL->abcUserRoleRevokeRole(Abc::$companyResolver->getCmpId(), $usrId, $role['rol_id']);
     }
-    Abc::$DL->abcProfileProper();
+    Abc::$DL->abcProfileProperUser(Abc::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
