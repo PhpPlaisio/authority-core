@@ -10,13 +10,13 @@
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "setbased/abc": "^0.10.29",
-    "setbased/abc-authority": "^0.1.1"
+    "setbased/abc": "*",
+    "setbased/abc-authority": "*"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
     "phpunit/phpunit": "^6.0.0",
-    "setbased/php-stratum": "^0.9.0"
+    "setbased/php-stratum": "*"
   },
   "autoload": {
     "psr-4": {
