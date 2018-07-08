@@ -1,0 +1,13 @@
+<abc>
+    <database>
+        <requires>
+            <table>ABC_AUTH_COMPANY</table>
+            <table>ABC_AUTH_USER</table>
+        </requires>
+    </database>
+    <stratum>
+        <includes>
+            <include>lib/psql/**/*.psql</include>
+        </includes>
+    </stratum>
+</abc>

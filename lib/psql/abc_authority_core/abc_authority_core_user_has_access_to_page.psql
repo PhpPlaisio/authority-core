@@ -1,0 +1,22 @@
+/**
+ * Selects non-zero if a user has the proper authorization for page. Otherwise, selects 0.
+ *
+ * @param p_cmp_id The ID of the company of the user (safe guard).
+ * @param p_usr_id The ID of the user.
+ * @param p_pag_id The ID of the page.
+ */
+create procedure abc_authority_core_user_has_access_to_page(in p_cmp_id @abc_auth_company.cmp_id%type@,
+                                                            in p_usr_id @abc_auth_user.usr_id%type@
+,                                                           in p_pag_id @aut_page.pag_id%type@)
+reads sql data
+-- type:   singleton1
+-- return: bool
+begin
+  select count(*) n
+  from       ABC_AUTH_USER usr
+  inner join AUT_PRO_PAG   app  on  app.pro_id = usr.pro_id
+  where usr.cmp_id = p_cmp_id
+  and   usr.usr_id = p_usr_id
+  and   app.pag_id = p_pag_id
+  ;
+end
