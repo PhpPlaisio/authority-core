@@ -57,7 +57,7 @@ class CoreAuthority implements Authority
    */
   public function userHasAccessToPage(int $usrId, int $pagId): bool
   {
-    Abc::$DL->abcAuthorityCoreUserHasAccessToPage(Abc::$companyResolver->getCmpId(), $usrId, $pagId);
+    return Abc::$DL->abcAuthorityCoreUserHasAccessToPage(Abc::$companyResolver->getCmpId(), $usrId, $pagId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
