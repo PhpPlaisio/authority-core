@@ -1,4 +1,4 @@
-<abc>
+<plaisio>
     <database>
         <requires>
             <table>ABC_AUTH_COMPANY</table>
@@ -10,4 +10,4 @@
             <include>lib/psql/**/*.psql</include>
         </includes>
     </stratum>
-</abc>
+</plaisio>

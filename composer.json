@@ -1,17 +1,16 @@
 {
-  "name": "setbased/abc-authority-core",
-  "description": "ABC-Framework: Core Authority",
+  "name": "plaisio/authority-core",
+  "description": "PhpPlaisio: Core Authority",
   "keywords": [
-    "ABC-Framework",
+    "PhpPlaisio",
     "Core",
     "Authority"
   ],
-  "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "setbased/abc": "*",
-    "setbased/abc-authority": "*"
+    "plaisio/kernel": "^1.0.0",
+    "plaisio/authority": "^1.0.0"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
@@ -19,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\Authority\\": "src/"
+      "Plaisio\\Authority\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Abc\\Authority\\Test\\": "test/"
+      "Plaisio\\Authority\\Test\\": "test/"
     }
   },
   "config": {
