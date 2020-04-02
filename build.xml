@@ -9,11 +9,6 @@
         <exec command="apigen generate --todo --tree --source src --destination doc" passthru="true" checkreturn="true"/>
     </target>
 
-    <!-- Runs all unit tests -->
-    <target name="unit">
-        <exec command="bin/phpunit" passthru="true" checkreturn="true"/>
-    </target>
-
     <target name="build">
         <echo message=""/>
     </target>
