@@ -23,7 +23,7 @@ class CoreAuthority implements Authority
    */
   public function hasAccessToPage(int $pagId): bool
   {
-    return !empty(Nub::$DL->abcAuthGetPageAuth(Nub::$companyResolver->getCmpId(), Nub::$session->getProId(), $pagId));
+    return !empty(Nub::$dl->abcAuthGetPageAuth(Nub::$companyResolver->getCmpId(), Nub::$session->getProId(), $pagId));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -40,8 +40,8 @@ class CoreAuthority implements Authority
    */
   public function userGrantRole(int $usrId, int $rolId): void
   {
-    Nub::$DL->abcUserRoleGrantRole(Nub::$companyResolver->getCmpId(), $usrId, $rolId, date('Y-m-d'), '9999-12-31');
-    Nub::$DL->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
+    Nub::$dl->abcUserRoleGrantRole(Nub::$companyResolver->getCmpId(), $usrId, $rolId, date('Y-m-d'), '9999-12-31');
+    Nub::$dl->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ class CoreAuthority implements Authority
    */
   public function userHasAccessToPage(int $usrId, int $pagId): bool
   {
-    return Nub::$DL->abcAuthorityCoreUserHasAccessToPage(Nub::$companyResolver->getCmpId(), $usrId, $pagId);
+    return Nub::$dl->abcAuthorityCoreUserHasAccessToPage(Nub::$companyResolver->getCmpId(), $usrId, $pagId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -75,8 +75,8 @@ class CoreAuthority implements Authority
    */
   public function userRevokeRole(int $usrId, int $rolId): void
   {
-    Nub::$DL->abcUserRoleRevokeRole(Nub::$companyResolver->getCmpId(), $usrId, $rolId);
-    Nub::$DL->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
+    Nub::$dl->abcUserRoleRevokeRole(Nub::$companyResolver->getCmpId(), $usrId, $rolId);
+    Nub::$dl->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -93,12 +93,12 @@ class CoreAuthority implements Authority
    */
   public function userRevokeRoleGroup(int $usrId, int $rlgId): void
   {
-    $roles = Nub::$DL->abcSystemRoleGroupGetRoles($rlgId);
+    $roles = Nub::$dl->abcSystemRoleGroupGetRoles($rlgId);
     foreach ($roles as $role)
     {
-      Nub::$DL->abcUserRoleRevokeRole(Nub::$companyResolver->getCmpId(), $usrId, $role['rol_id']);
+      Nub::$dl->abcUserRoleRevokeRole(Nub::$companyResolver->getCmpId(), $usrId, $role['rol_id']);
     }
-    Nub::$DL->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
+    Nub::$dl->abcProfileProperUser(Nub::$companyResolver->getCmpId(), $usrId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
