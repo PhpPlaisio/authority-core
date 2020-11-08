@@ -12,7 +12,8 @@
     "plaisio/authority": "^1.2",
     "plaisio/company-resolver": "^2.0",
     "plaisio/kernel": "^3.0",
-    "plaisio/session": "^4.0"
+    "plaisio/session": "^4.0",
+    "setbased/php-stratum-mysql": "^6.0"
   },
   "require-dev": {
     "phing/phing": "^2.0",

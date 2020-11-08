@@ -4,13 +4,15 @@
  * @param p_cmp_id The ID of the company of the user (safe guard).
  * @param p_usr_id The ID of the user.
  * @param p_pag_id The ID of the page.
+ *
+ * @type singleton1
+ *
+ * @return bool
  */
 create procedure abc_authority_core_user_has_access_to_page(in p_cmp_id @abc_auth_company.cmp_id%type@,
                                                             in p_usr_id @abc_auth_user.usr_id%type@
 ,                                                           in p_pag_id @aut_page.pag_id%type@)
 reads sql data
--- type:   singleton1
--- return: bool
 begin
   select count(*) n
   from       ABC_AUTH_USER usr
