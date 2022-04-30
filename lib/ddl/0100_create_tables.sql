@@ -12,8 +12,8 @@
 /*================================================================================*/
 
 CREATE TABLE `ABC_AUTH_FLAG` (
-  `rfl_id` TINYINT AUTO_INCREMENT NOT NULL,
-  `rfl_flag` INT NOT NULL,
+  `rfl_id` TINYINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `rfl_flag` INT UNSIGNED NOT NULL,
   `rfl_name` VARCHAR(80) NOT NULL,
   `rfl_bitwise_function` VARCHAR(3) DEFAULT 'OR' NOT NULL,
   `rfl_label` VARCHAR(128) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
@@ -46,8 +46,8 @@ The label (for constants) of this flag.
 */
 
 CREATE TABLE `ABC_AUTH_MODULE` (
-  `mdl_id` SMALLINT AUTO_INCREMENT NOT NULL,
-  `wrd_id` SMALLINT NOT NULL,
+  `mdl_id` SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `wrd_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`mdl_id`)
 );
 
@@ -67,9 +67,9 @@ The name of the module.
 */
 
 CREATE TABLE `ABC_AUTH_FUNCTIONALITY` (
-  `fun_id` SMALLINT AUTO_INCREMENT NOT NULL,
-  `mdl_id` SMALLINT NOT NULL,
-  `wrd_id` SMALLINT NOT NULL,
+  `fun_id` SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `mdl_id` SMALLINT UNSIGNED NOT NULL,
+  `wrd_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`fun_id`)
 );
 
@@ -94,8 +94,8 @@ The name of the functionality.
 */
 
 CREATE TABLE `ABC_AUTH_MODULE_COMPANY` (
-  `cmp_id` SMALLINT NOT NULL,
-  `mdl_id` SMALLINT NOT NULL,
+  `cmp_id` SMALLINT UNSIGNED NOT NULL,
+  `mdl_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`cmp_id`, `mdl_id`),
   CONSTRAINT `SECONDARY` UNIQUE (`mdl_id`, `cmp_id`)
 );
@@ -116,8 +116,8 @@ The module.
 */
 
 CREATE TABLE `ABC_AUTH_PAG_FUN` (
-  `pag_id` SMALLINT NOT NULL,
-  `fun_id` SMALLINT NOT NULL,
+  `pag_id` SMALLINT UNSIGNED NOT NULL,
+  `fun_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`fun_id`, `pag_id`),
   CONSTRAINT `SECONDARY` UNIQUE (`pag_id`, `fun_id`)
 );
@@ -138,8 +138,8 @@ The functionality.
 */
 
 CREATE TABLE `ABC_AUTH_PRO_PAG` (
-  `pag_id` SMALLINT NOT NULL,
-  `pro_id` SMALLINT NOT NULL,
+  `pag_id` SMALLINT UNSIGNED NOT NULL,
+  `pro_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PK_ABC_AUTH_PRO_PAG` PRIMARY KEY (`pro_id`, `pag_id`)
 );
 
@@ -159,8 +159,8 @@ The profile.
 */
 
 CREATE TABLE `ABC_AUTH_ROLE_GROUP` (
-  `rlg_id` SMALLINT AUTO_INCREMENT NOT NULL,
-  `wrd_id` SMALLINT NOT NULL,
+  `rlg_id` SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `wrd_id` SMALLINT UNSIGNED NOT NULL,
   `rlg_weight` SMALLINT NOT NULL,
   `rlg_label` VARCHAR(50) CHARACTER SET ascii COLLATE ascii_general_ci,
   CONSTRAINT `PK_ABC_AUTH_ROLE_GROUP` PRIMARY KEY (`rlg_id`)
@@ -192,9 +192,9 @@ The label (for constants) of the role group.
 */
 
 CREATE TABLE `ABC_AUTH_ROLE` (
-  `rol_id` SMALLINT AUTO_INCREMENT NOT NULL,
-  `cmp_id` SMALLINT NOT NULL,
-  `rlg_id` SMALLINT NOT NULL,
+  `rol_id` SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `cmp_id` SMALLINT UNSIGNED NOT NULL,
+  `rlg_id` SMALLINT UNSIGNED NOT NULL,
   `rol_weight` SMALLINT NOT NULL,
   `rol_name` VARCHAR(32) NOT NULL,
   `rol_label` VARCHAR(50) CHARACTER SET ascii COLLATE ascii_general_ci,
@@ -237,9 +237,9 @@ The label (for constants) of the role.
 */
 
 CREATE TABLE `ABC_AUTH_PRO_ROL` (
-  `cmp_id` SMALLINT NOT NULL,
-  `pro_id` SMALLINT NOT NULL,
-  `rol_id` SMALLINT NOT NULL,
+  `cmp_id` SMALLINT UNSIGNED NOT NULL,
+  `pro_id` SMALLINT UNSIGNED NOT NULL,
+  `rol_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PK_ABC_AUTH_PRO_ROL` PRIMARY KEY (`pro_id`, `rol_id`)
 );
 
@@ -264,8 +264,8 @@ The role.
 */
 
 CREATE TABLE `ABC_AUTH_ROL_FLG` (
-  `rfl_id` TINYINT NOT NULL,
-  `rol_id` SMALLINT NOT NULL,
+  `rfl_id` TINYINT UNSIGNED NOT NULL,
+  `rol_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PK_ABC_AUTH_ROL_FLG` PRIMARY KEY (`rfl_id`, `rol_id`)
 );
 
@@ -285,9 +285,9 @@ The role.
 */
 
 CREATE TABLE `ABC_AUTH_ROL_FUN` (
-  `cmp_id` SMALLINT NOT NULL,
-  `fun_id` SMALLINT NOT NULL,
-  `rol_id` SMALLINT NOT NULL,
+  `cmp_id` SMALLINT UNSIGNED NOT NULL,
+  `fun_id` SMALLINT UNSIGNED NOT NULL,
+  `rol_id` SMALLINT UNSIGNED NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`rol_id`, `fun_id`),
   CONSTRAINT `SECONDARY` UNIQUE (`fun_id`, `rol_id`)
 );
@@ -313,9 +313,9 @@ The role.
 */
 
 CREATE TABLE `ABC_AUTH_USR_ROL` (
-  `cmp_id` SMALLINT NOT NULL,
-  `usr_id` INTEGER NOT NULL,
-  `rol_id` SMALLINT NOT NULL,
+  `cmp_id` SMALLINT UNSIGNED NOT NULL,
+  `usr_id` INTEGER UNSIGNED NOT NULL,
+  `rol_id` SMALLINT UNSIGNED NOT NULL,
   `aur_date_start` DATE NOT NULL,
   `aur_date_stop` DATE NOT NULL,
   CONSTRAINT `PRIMARY_KEY` PRIMARY KEY (`usr_id`, `rol_id`),
