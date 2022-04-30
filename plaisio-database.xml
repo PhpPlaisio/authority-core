@@ -1,6 +1,8 @@
 <database>
     <requires>
         <table>ABC_AUTH_COMPANY</table>
+        <table>ABC_AUTH_PAGE</table>
         <table>ABC_AUTH_USER</table>
+        <table>ABC_BABEL_WORD</table>
     </requires>
 </database>

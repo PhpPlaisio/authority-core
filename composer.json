@@ -8,17 +8,18 @@
   ],
   "license": "MIT",
   "require": {
-    "php": ">=7.3",
-    "plaisio/authority": "^1.2",
-    "plaisio/company-resolver": "^2.0",
-    "plaisio/kernel": "^3.0",
-    "plaisio/session": "^4.0",
-    "setbased/php-stratum-mysql": "^6.0"
+    "php": ">=7.4",
+    "plaisio/authority": "^1.2.0",
+    "plaisio/company-resolver": "^2.0.0",
+    "plaisio/db-page": "^0.9.0",
+    "plaisio/kernel": "^3.1.1",
+    "plaisio/session": "^4.0.0",
+    "setbased/php-stratum-mysql": "^6.5.0"
   },
   "require-dev": {
-    "phing/phing": "^2.0",
-    "phpunit/phpunit": "^9.0",
-    "plaisio/console": "^2.0"
+    "phing/phing": "^2.17.2",
+    "phpunit/phpunit": "^9.5.20",
+    "plaisio/console": "^2.7.1"
   },
   "autoload": {
     "psr-4": {
