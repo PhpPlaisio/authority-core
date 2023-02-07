@@ -8,31 +8,31 @@
   ],
   "license": "MIT",
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.1",
     "plaisio/authority": "^1.2.0",
-    "plaisio/company-resolver": "^2.0.0",
+    "plaisio/company-resolver": "^2.1.0",
     "plaisio/db-page": "^0.9.1",
-    "plaisio/kernel": "^3.1.1",
-    "plaisio/session": "^4.0.0",
-    "setbased/php-stratum-mysql": "^6.5.0"
+    "plaisio/kernel": "^3.2.1",
+    "plaisio/session": "^5.0.0",
+    "setbased/php-stratum-mysql": "^6.6.0"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require-dev": {
-    "phing/phing": "^2.17.2",
-    "phpunit/phpunit": "^9.5.20",
-    "plaisio/console": "^2.7.1"
+    "phing/phing": "^3.0.0-RC4",
+    "phpunit/phpunit": "^9.6.3",
+    "plaisio/console-kernel": "^1.0.1"
   },
   "autoload": {
     "psr-4": {
       "Plaisio\\Authority\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Plaisio\\Authority\\Test\\": "test/"
-    }
-  },
   "config": {
     "bin-dir": "bin/",
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "phing/phing-composer-configurator": true
+    }
   }
 }
