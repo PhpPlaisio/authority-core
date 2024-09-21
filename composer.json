@@ -14,13 +14,10 @@
     "plaisio/db-page": "^0.9.2",
     "plaisio/kernel": "^3.2.1",
     "plaisio/session": "^5.0.0",
-    "setbased/php-stratum-mysql": "^6.6.0"
+    "setbased/php-stratum-mysql": "^7.0.0"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require-dev": {
-    "phing/phing": "^3.0.0-RC4",
-    "phpunit/phpunit": "^9.6.3",
+    "phing/phing": "^3.0.0",
     "plaisio/console-kernel": "^1.0.1"
   },
   "autoload": {
