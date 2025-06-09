@@ -11,7 +11,7 @@
     "php": ">=8.3",
     "plaisio/authority": "^1.4.0",
     "plaisio/company-resolver": "^2.2.0",
-    "plaisio/db-page": "^0.9.2",
+    "plaisio/db-page": "^0.9.3",
     "plaisio/kernel": "^3.3.0",
     "plaisio/session": "^5.1.0",
     "setbased/php-stratum-mysql": "^7.1.1"
